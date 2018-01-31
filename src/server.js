@@ -37,7 +37,6 @@ app.use((req, res) => {
   const store = configureStore();
   const allRoutes = getRoutes(store);
   const assets = webpackIsomorphicTools.assets();
-  req.url = "/";
   const url = req.apiGateway ? req.apiGateway.event.pathParameters.pathName : req.url || "/";
 
   function hydrateOnClient() {
